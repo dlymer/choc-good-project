@@ -1,6 +1,10 @@
-# choc-good-project
+# Chocolately Goodness
 
 # Team Members
-Kevin Broderick
-Denis Lymer
-Donal Uviase
+
+## Kevin Broderick
+## Denis Lyner
+## Donald Uviase
+
+## About this project
+### This project does ...
