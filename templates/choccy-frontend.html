@@ -1,4 +1,4 @@
-HTML5<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,13 +8,17 @@ HTML5<!doctype html>
     <link rel="stylesheet" type="text/css" href="choccy-styles.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Chocolatey Goodness</title>
-</head>
-<body>
-{% block content %}
-<form class="example" action="action_page.php">
-  <input type="text" placeholder="Search.." name="search">
-  <button type="submit"><i class="fa fa-search"></i></button>
-</form>
-{% endblock %}
-</body>
+    </head>
+    <body>
+    {% block content %}
+    <h1>Search for chocolate!</h1>
+    <p>Search our extensive database below</p>
+    <form class="example" action="action_page.php">
+     <input type="text" placeholder="Search.." name="search">
+    <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+
+    <p> The company who produced this chocolate is {{company}}.</p>
+    {% endblock %}
+    </body>
 </html>
