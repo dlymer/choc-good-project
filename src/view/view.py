@@ -1,17 +1,13 @@
 from src.controller.controller import controller
-from flask import Flask, jsonify, Blueprint
+from src import app
+from flask import render_template
 
 
-bp = Blueprint('hello', __name__)
-
-@bp.route('/')
-def Test():
-    print("hello world")
-
-@bp.route('/helloworld', methods='[GET]')
+@app.route('/helloworld', methods=["GET"])
 def drawHelloWorld():
     return controller.renderHelloWorld()
 
 
-"""if __name__== '__main__':
-    app.run()"""
+@app.route('/hellohtml')
+def drawhellohtml():
+    return render_template('hello.html', message=controller.renderHelloWorld())

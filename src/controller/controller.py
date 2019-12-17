@@ -1,20 +1,14 @@
 #choclately goodness controller
-#from flask import Flask,jsonify
-#from model import model
-
-#build the app and refer it to the flask main
-#app = Flask(__name__)
+from src.model.model import Model
 
 class Controller():
 
-    #test method
-    #@app.route('/helloworld', methods='[GET]')
-    def renderHelloWorld(self):
-        self.conModel = 'Test' #model.getHelloWorld()
-        return jsonify(self.conModel)
+    def __init__(self):
+        self.model = Model()
 
+    def renderHelloWorld(self):
+        self.conModel = self.model.getHelloWorld()
+        return self.conModel
 
 controller = Controller()
 
-"""if __name__== '__main__':
-    app.run()"""
