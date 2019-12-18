@@ -25,7 +25,7 @@
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="c65819e1-8ab5-4ca7-b8be-0df074b53577">
-        <schema name="main" object-types="table, view" />
+        <schema name="main" object-types="dataset trigger, constraint, column, table, index, view" />
       </connection>
     </loaded-nodes>
   </component>
@@ -39,6 +39,9 @@
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="c65819e1-8ab5-4ca7-b8be-0df074b53577" />
+  </component>
+  <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="c65819e1-8ab5-4ca7-b8be-0df074b53577" dataset="main.company_name" active-filter-id="" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
