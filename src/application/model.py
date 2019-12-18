@@ -1,8 +1,6 @@
 # choclately goodness model
 import json
-import flask_sqlalchemy as database
-
-db_engine = None
+from flask_sqlalchemy import sqlalchemy as database
 
 
 class Model:
@@ -27,7 +25,7 @@ class Model:
     def get_ChocolateBars(self):
         record_list = []
         sql_query = "Select"
-        record_set = database.select([])
+        record_set = self.connection.select([])
 
         for record in record_set:
             (company, bar_name, ref, review_date, coco_percent, location, rating,
