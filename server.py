@@ -5,12 +5,16 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'goodchoc'
 
 @app.route('/')
-def home():
-    return 'Chocolatey Goodness homepage'
+def front():
+    return render_template('home.html')
 
 @app.route('/main')
 def main():
     return 'Main page'
+
+@app.route('/home')
+def home():
+    return render_template('home.html')
 
 @app.route('/search')
 def search():
@@ -18,7 +22,7 @@ def search():
 
 @app.route('/about')
 def about():
-    return 'About us'
+    return render_template('about.html')
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
