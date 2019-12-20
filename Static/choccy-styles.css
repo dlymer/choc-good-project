@@ -1,10 +1,8 @@
-* {
-  box-sizing: border-box;
-}
+*
 
 /* Style the search field */
 form.example input[type=text] {
-  padding: 10px;
+  padding: 15px;
   font-size: 17px;
   border: 1px solid grey;
   float: left;
@@ -16,7 +14,7 @@ form.example input[type=text] {
 form.example button {
   float: left;
   width: 20%;
-  padding: 10px;
+  padding: 15px;
   background: #2196F3;
   color: white;
   font-size: 17px;
@@ -37,19 +35,55 @@ form.example::after {
 }
 
 /* bootstrap theme styles */
-/*!
- * Start Bootstrap - Business Casual v5.0.9 (https://startbootstrap.com/template-overviews/business-casual)
- * Copyright 2013-2019 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-business-casual/blob/master/LICENSE)
- */
 
+/*
 body {
   font-family: 'Lora';
-  background-image: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("../img/bg.jpg");
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
 }
+*/
+
+/*.bgdimg {
+    background-image: url('pics/choc1.jpg');
+    background-repeat: no-repeat;
+    /*background-size: 100%;
+    /*opacity: 0.4;
+    filter:alpha(opacity=40);
+    height:100%;
+    width:100%;
+    z-index:0.1;
+}*/
+
+#backgroundImage{z-index: 1;}
+
+#backgroundImage:before {
+   content: "";
+   position: absolute;
+   z-index: -1;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   background-image: url('pics/choc3.jpg');
+   /*background-repeat: no-repeat;*/
+   background-size: 50%;
+   opacity: 0.2;
+   filter:alpha(opacity=40);
+   height:100%;
+   width:100%;
+ }
+
+/*.main{
+   height:320px;
+   width:320px;
+   margin:auto;
+   background-color:green;
+   z-index:-1;
+   opacity: 1;
+   filter:alpha(opacity=100);
+}*/
 
 h1,
 h2,
@@ -73,13 +107,14 @@ p {
   margin-bottom: 5rem;
   text-transform: uppercase;
   line-height: 1;
-  font-family: 'Raleway';
+  font-family: 'Ma Shan Zheng', cursive;
 }
 
 .site-heading .site-heading-upper {
   display: block;
   font-size: 2rem;
   font-weight: 800;
+  padding: 15px;
 }
 
 .site-heading .site-heading-lower {
@@ -114,21 +149,21 @@ p {
 }
 
 #mainNav {
-  background-color: 'brown';
-  font-family: 'Raleway';
+
+  font-family: 'Ma Shan Zheng', cursive;
 }
 
 #mainNav .navbar-brand {
-  color: #e6a756;
+  color: #e08a1b;
 }
 
 #mainNav .navbar-nav .nav-item .nav-link {
-  color: 'black';
+  color: #e08a1b;
   font-weight: 800;
 }
 
 #mainNav .navbar-nav .nav-item.active .nav-link {
-  color: #e6a756;
+  color: #e08a1b;
 }
 
 @media (min-width: 992px) {
@@ -136,10 +171,10 @@ p {
     font-size: 0.9rem;
   }
   #mainNav .navbar-nav .nav-item .nav-link:hover {
-    color: rgba(255, 255, 255, 0.4);
+    color: #e08a1b;
   }
   #mainNav .navbar-nav .nav-item.active .nav-link:hover {
-    color: #e6a756;
+    color: #e08a1b;
   }
 }
 
@@ -295,4 +330,21 @@ p {
 
 .choc-title {
   colour: 'red'
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.wrapper {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  }
+
+.navbar-toggler-icon {
+colour: 'black';
 }
