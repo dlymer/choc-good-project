@@ -47,6 +47,10 @@ form.example::after {
   display: table;
 }
 
+.scrollimg {
+background-attachment: scroll;
+}
+
 #backgroundImage{z-index: 1;}
 
 #backgroundImage:before {
@@ -57,7 +61,7 @@ form.example::after {
    bottom: 0;
    left: 0;
    right: 0;
-   background-attachment: scroll;
+
    background-image: url('pics/choc3.jpg');
    /*background-repeat: no-repeat;*/
    background-size: 50%;
@@ -66,6 +70,17 @@ form.example::after {
    height:100%;
    width:100%;
    background-attachment: scroll;
+ }
+
+ .backgroundhome {
+    background-image: url('pics/choc3.jpg');
+   /*background-repeat: no-repeat;*/
+   background-size: 25%;
+   opacity: 0.2;
+   filter:alpha(opacity=10);
+
+   background-attachment: scroll;
+    z-index: -1;
  }
 
 h1,
