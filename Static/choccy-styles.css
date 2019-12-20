@@ -1,5 +1,18 @@
 *
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script&display=swap');
 
+.headtext {
+font-family: 'Dancing Script', cursive;
+font-weight: 800;
+}
+
+.headtextcol {
+font-family: 'Dancing Script', cursive;
+font-weight: 800;
+color: #fea4a7;
+text-shadow: 2px 2px #ff0000;
+font-size: 40px;
+}
 /* Style the search field */
 form.example input[type=text] {
   padding: 15px;
@@ -34,27 +47,9 @@ form.example::after {
   display: table;
 }
 
-/* bootstrap theme styles */
-
-/*
-body {
-  font-family: 'Lora';
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
+.scrollimg {
+background-attachment: scroll;
 }
-*/
-
-/*.bgdimg {
-    background-image: url('pics/choc1.jpg');
-    background-repeat: no-repeat;
-    /*background-size: 100%;
-    /*opacity: 0.4;
-    filter:alpha(opacity=40);
-    height:100%;
-    width:100%;
-    z-index:0.1;
-}*/
 
 #backgroundImage{z-index: 1;}
 
@@ -66,6 +61,7 @@ body {
    bottom: 0;
    left: 0;
    right: 0;
+
    background-image: url('pics/choc3.jpg');
    /*background-repeat: no-repeat;*/
    background-size: 50%;
@@ -73,17 +69,19 @@ body {
    filter:alpha(opacity=40);
    height:100%;
    width:100%;
+   background-attachment: scroll;
  }
 
-/*.main{
-   height:320px;
-   width:320px;
-   margin:auto;
-   background-color:green;
-   z-index:-1;
-   opacity: 1;
-   filter:alpha(opacity=100);
-}*/
+ .backgroundhome {
+    background-image: url('pics/choc3.jpg');
+   /*background-repeat: no-repeat;*/
+   background-size: 25%;
+   opacity: 0.2;
+   filter:alpha(opacity=10);
+
+   background-attachment: scroll;
+    z-index: -1;
+ }
 
 h1,
 h2,
@@ -91,7 +89,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Raleway';
+  font-family: 'Dancing Script', cursive;
 }
 
 p {
@@ -107,7 +105,7 @@ p {
   margin-bottom: 5rem;
   text-transform: uppercase;
   line-height: 1;
-  font-family: 'Ma Shan Zheng', cursive;
+  font-family: 'Dancing Script', cursive;
 }
 
 .site-heading .site-heading-upper {
@@ -150,31 +148,31 @@ p {
 
 #mainNav {
 
-  font-family: 'Ma Shan Zheng', cursive;
+  font-family: 'Dancing Script', cursive;
 }
 
 #mainNav .navbar-brand {
-  color: #e08a1b;
+  color: #fea4a7;
 }
 
 #mainNav .navbar-nav .nav-item .nav-link {
-  color: #e08a1b;
-  font-weight: 800;
+  color: #fea4a7;
+  font-weight: 1000;
 }
 
 #mainNav .navbar-nav .nav-item.active .nav-link {
-  color: #e08a1b;
+  color: #fea4a7;
 }
 
 @media (min-width: 992px) {
   #mainNav .navbar-nav .nav-item .nav-link {
-    font-size: 0.9rem;
+    font-size: 2rem;
   }
   #mainNav .navbar-nav .nav-item .nav-link:hover {
-    color: #e08a1b;
+    color: #fd121a;
   }
   #mainNav .navbar-nav .nav-item.active .nav-link:hover {
-    color: #e08a1b;
+    color: #fd121a;
   }
 }
 
@@ -332,13 +330,6 @@ p {
   colour: 'red'
 }
 
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-
 .wrapper {
   display: block;
   margin-left: auto;
@@ -347,4 +338,48 @@ p {
 
 .navbar-toggler-icon {
 colour: 'black';
+}
+
+.container {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border-radius: 8px;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #fea4a7;
+  border-radius: 8px;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
 }
