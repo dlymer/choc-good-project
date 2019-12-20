@@ -45,7 +45,8 @@ class Model:
 
     def get_ChocolateBars(self):
         record_list = []
-        sql_query = "select * from bean_origin_type;"
+        sql_query = 'select company_name.*, bean_origin_type.* from bean_origin_type ' \
+                   'INNER JOIN company_name on bean_origin_type.companyID = company_name.companyID;'
 
         # chocolate_tbl = database.Table('bean_origin_type', database.MetaData(self.connection), autoload=True)
         # chocolate_qry = database.select([chocolate_tbl])
@@ -57,12 +58,53 @@ class Model:
         record_set = cursor.fetchall()
 
         for record in record_set:
-            (barid, bar_name, bean_origin, coco_percent, bean_type) = record
-            record_list.append([bar_name, bean_origin, coco_percent, bean_type])
+            (comid, company, location, barid, bar_name, bean_origin, coco_percent, bean_type, redudentid) = record
+            record_list.append([company, location, bar_name, bean_origin, coco_percent, bean_type])
 
         record_list_json = json.dumps(record_list)
 
         return record_list_json
 
-    def post(self):
-        ind = []
+    def postUser(self, name, password):
+        sqlQuery = "Insert INTO User (username, password, email) VALUES(?,?,?);"
+
+        print(name + " " + password)
+        cursor = self.connection.cursor()
+        cursor.execute(sqlQuery, (name, password, "noemail@email.com"))
+
+    def getUser(self, name, password):
+        record_set = []
+        sqlQuery = "Select username, password from user where " \
+                   "password = %s and username = %s"
+
+        cursor = self.connection.cursor()
+        cursor.execute(sqlQuery, (name, password))
+        record_set = cursor.fetchall()
+
+        if record_set.count() == 0:
+            return False
+        else:
+            return True
+
+    """
+    
+        get selected chocolate bars by the manufactor
+    """
+    def getSelectedBars(self, company_name):
+        sqlQuery = 'select company_name.*, bean_origin_type.* from bean_origin_type ' \
+                   'INNER JOIN company_name on bean_origin_type.companyID = company_name.companyID ' \
+                   'where company = ?;'
+
+        record_list = []
+
+        cursor = self.connection.cursor()
+        cursor.execute(sqlQuery, (company_name,))
+        record_set = cursor.fetchall()
+
+        for record in record_set:
+            (comid, company, location, barid, bar_name, bean_origin, coco_percent, bean_type, redudentid) = record
+            record_list.append([company, location, bar_name, bean_origin, coco_percent, bean_type])
+
+        record_list_json = json.dumps(record_list)
+
+        return record_list_json

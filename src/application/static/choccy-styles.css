@@ -1,10 +1,21 @@
-* {
-  box-sizing: border-box;
+*
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script&display=swap');
+
+.headtext {
+font-family: 'Dancing Script', cursive;
+font-weight: 800;
 }
 
+.headtextcol {
+font-family: 'Dancing Script', cursive;
+font-weight: 800;
+color: #fea4a7;
+text-shadow: 2px 2px #ff0000;
+font-size: 40px;
+}
 /* Style the search field */
 form.example input[type=text] {
-  padding: 10px;
+  padding: 15px;
   font-size: 17px;
   border: 1px solid grey;
   float: left;
@@ -16,7 +27,7 @@ form.example input[type=text] {
 form.example button {
   float: left;
   width: 20%;
-  padding: 10px;
+  padding: 15px;
   background: #2196F3;
   color: white;
   font-size: 17px;
@@ -36,20 +47,41 @@ form.example::after {
   display: table;
 }
 
-/* bootstrap theme styles */
-/*!
- * Start Bootstrap - Business Casual v5.0.9 (https://startbootstrap.com/template-overviews/business-casual)
- * Copyright 2013-2019 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-business-casual/blob/master/LICENSE)
- */
-
-body {
-  font-family: 'Lora';
-  background-image: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("../img/bg.jpg");
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
+.scrollimg {
+background-attachment: scroll;
 }
+
+#backgroundImage{z-index: 1;}
+
+#backgroundImage:before {
+   content: "";
+   position: absolute;
+   z-index: -1;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+
+   background-image: url('pics/choc3.jpg');
+   /*background-repeat: no-repeat;*/
+   background-size: 50%;
+   opacity: 0.2;
+   filter:alpha(opacity=40);
+   height:100%;
+   width:100%;
+   background-attachment: scroll;
+ }
+
+ .backgroundhome {
+    background-image: url('pics/choc3.jpg');
+   /*background-repeat: no-repeat;*/
+   background-size: 25%;
+   opacity: 0.2;
+   filter:alpha(opacity=10);
+
+   background-attachment: scroll;
+    z-index: -1;
+ }
 
 h1,
 h2,
@@ -57,7 +89,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Raleway';
+  font-family: 'Dancing Script', cursive;
 }
 
 p {
@@ -73,13 +105,14 @@ p {
   margin-bottom: 5rem;
   text-transform: uppercase;
   line-height: 1;
-  font-family: 'Raleway';
+  font-family: 'Dancing Script', cursive;
 }
 
 .site-heading .site-heading-upper {
   display: block;
   font-size: 2rem;
   font-weight: 800;
+  padding: 15px;
 }
 
 .site-heading .site-heading-lower {
@@ -114,32 +147,32 @@ p {
 }
 
 #mainNav {
-  background-color: 'brown';
-  font-family: 'Raleway';
+
+  font-family: 'Dancing Script', cursive;
 }
 
 #mainNav .navbar-brand {
-  color: #e6a756;
+  color: #fea4a7;
 }
 
 #mainNav .navbar-nav .nav-item .nav-link {
-  color: 'black';
-  font-weight: 800;
+  color: #fea4a7;
+  font-weight: 1000;
 }
 
 #mainNav .navbar-nav .nav-item.active .nav-link {
-  color: #e6a756;
+  color: #fea4a7;
 }
 
 @media (min-width: 992px) {
   #mainNav .navbar-nav .nav-item .nav-link {
-    font-size: 0.9rem;
+    font-size: 2rem;
   }
   #mainNav .navbar-nav .nav-item .nav-link:hover {
-    color: rgba(255, 255, 255, 0.4);
+    color: #fd121a;
   }
   #mainNav .navbar-nav .nav-item.active .nav-link:hover {
-    color: #e6a756;
+    color: #fd121a;
   }
 }
 
@@ -295,4 +328,58 @@ p {
 
 .choc-title {
   colour: 'red'
+}
+
+.wrapper {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  }
+
+.navbar-toggler-icon {
+colour: 'black';
+}
+
+.container {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border-radius: 8px;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #fea4a7;
+  border-radius: 8px;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
 }

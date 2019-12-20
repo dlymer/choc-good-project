@@ -28,21 +28,23 @@ def display_choccy_bars():
 
 
 @app.route('/')
-def front():
-    return render_template('home.html')
+def home():
+    return 'Chocolatey Goodness homepage'
+
 
 @app.route('/main')
 def main():
     return 'Main page'
 
-@app.route('/home')
-def home():
-    return render_template('home.html')
 
 @app.route('/search', methods=['POST'])
 def search():
     form = request.form
+    print(form)
+    print(type(form))
     company_name = form.get('company_name')
+    print(type(company_name))
+    print(company_name)
     db = Model()
     selected_list = json.loads(db.getSelectedBars(company_name))
     return render_template('choccy-frontend.html', chocolate_bars=selected_list, company=company_name)
@@ -50,19 +52,16 @@ def search():
 
 @app.route('/about')
 def about():
-    return render_template('about.html')
+    return 'About us'
+
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     form = SignUpForm()
     if form.is_submitted():
-        userName = form.username.data
-        password = form.password.data
-        result = Model().postUser(userName, password)
+        result = Model().postUser()
 
         if result == True:
             return render_template('user.html', result=result)
         else:
             return render_template('signup.html', form=form)
-    else:
-        return render_template('signup.html', form=form)

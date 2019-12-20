@@ -6,3 +6,6 @@ class SignUpForm(FlaskForm):
     username = StringField('Enter Username')
     password = PasswordField('Enter Password')
     submit = SubmitField('Signup!')
+
+#class searchForm(FlaskForm):
+  #  company_name = StringField('')
